@@ -1,9 +1,8 @@
-/**
- * Site config — edit these values first.
- */
+
+
 const SITE_CONFIG = {
-  email: 'your.email@example.com', // Used for display + clipboard copy
-  emailDomain: 'example.com',      // Shown in terminal DNS line (optional flavor)
+  email: 'honneung13@gmail.com', // Used for display + clipboard copy
+  emailDomain: 'gmail.com',      // Shown in terminal DNS line (optional flavor)
 };
 
 (function () {
