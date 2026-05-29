@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Guide: page title + SEO description -->
+  <meta name="description" content="[Your Name] — Portfolio" />
+  <title>[Your Name] // Portfolio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyber: {
+              bg: '#0a0a12',
+              pink: '#ff007f',
+              cyan: '#00f0ff',
+              green: '#39ff14',
+              yellow: '#fcee0a',
+            }
+          }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="cyber-grid scanlines min-h-screen">
+
+  <div class="fixed top-20 -left-32 w-64 h-64 rounded-full bg-cyber-pink/10 blur-[100px] pointer-events-none" aria-hidden="true"></div>
+  <div class="fixed bottom-40 -right-32 w-80 h-80 rounded-full bg-cyber-cyan/10 blur-[120px] pointer-events-none" aria-hidden="true"></div>
+
+  <!-- HEADER / HUD -->
+  <header class="fixed top-0 left-0 right-0 z-40 border-b border-cyber-cyan/20 bg-[#0a0a12]/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="hidden sm:flex items-center justify-between py-1 text-[10px] sm:text-xs text-cyber-cyan/70 border-b border-cyber-cyan/10 tracking-widest">
+        <span><i class="ri-shield-check-line mr-1"></i>SYSTEM: <span class="text-cyber-green glow-green">ONLINE</span></span>
+        <span>NET: <span class="text-cyber-yellow">SECURE_TUNNEL</span></span>
+        <span id="hud-clock">--:--:--</span>
+        <span>PING: <span class="text-cyber-green">12ms</span></span>
+        <span class="blink text-cyber-pink">◉ REC</span>
+      </div>
+
+      <nav class="flex items-center justify-between py-3 sm:py-4">
+        <!-- Guide: nav brand (match hero name) -->
+        <a href="#hero" class="font-display font-bold text-sm sm:text-base tracking-wider text-cyber-cyan glow-cyan">
+          &lt;[YOUR_HANDLE]/&gt;
+        </a>
+
+        <button id="menu-toggle" class="sm:hidden text-cyber-cyan text-2xl p-1" aria-label="Open menu" aria-expanded="false">
+          <i class="ri-menu-3-line"></i>
+        </button>
+
+        <ul id="nav-menu" class="hidden sm:flex gap-6 lg:gap-8 text-xs sm:text-sm uppercase tracking-widest">
+          <li><a href="#hero" class="nav-link text-gray-300 hover:text-cyber-cyan">Home</a></li>
+          <li><a href="#archive" class="nav-link text-gray-300 hover:text-cyber-cyan">Archive</a></li>
+          <li><a href="#augment" class="nav-link text-gray-300 hover:text-cyber-cyan">Augment</a></li>
+          <li><a href="#terminal" class="nav-link text-gray-300 hover:text-cyber-pink">Contact</a></li>
+        </ul>
+      </nav>
+
+      <ul id="mobile-menu" class="hidden sm:hidden pb-4 flex flex-col gap-3 text-sm uppercase tracking-widest border-t border-cyber-cyan/10 pt-3">
+        <li><a href="#hero" class="mobile-link block py-1 text-cyber-cyan">// Home</a></li>
+        <li><a href="#archive" class="mobile-link block py-1 text-cyber-cyan">// Archive</a></li>
+        <li><a href="#augment" class="mobile-link block py-1 text-cyber-cyan">// Augment</a></li>
+        <li><a href="#terminal" class="mobile-link block py-1 text-cyber-pink">// Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="pt-24 sm:pt-28">
+
+    <!-- HERO -->
+    <section id="hero" class="min-h-[85vh] flex items-center px-4 sm:px-6 py-16">
+      <div class="max-w-6xl mx-auto w-full">
+
+        <!-- Optional profile image (uncomment and add file to images/) -->
+        <!--
+        <img
+          src="images/avatar.png"
+          alt="[Your Name]"
+          class="w-24 h-24 sm:w-32 sm:h-32 mb-6 cyber-cut border border-cyber-cyan/40 object-cover"
+        />
+        -->
+
+        <p class="text-cyber-green text-xs sm:text-sm tracking-[0.3em] mb-4 flex items-center gap-2">
+          <span class="w-2 h-2 bg-cyber-green rounded-full blink"></span>
+          ACCESS GRANTED — WELCOME TO THE GRID
+        </p>
+
+        <!-- Guide: display name (keep data-text in sync for glitch effect) -->
+        <h1 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl uppercase leading-tight mb-4">
+          <span class="glitch text-white glow-cyan" data-text="[YOUR_NAME]">[YOUR_NAME]</span>
+        </h1>
+
+        <div class="cyber-cut neon-border-cyan bg-[#0d0d1a]/80 p-4 sm:p-6 max-w-2xl mb-8">
+          <!-- Guide: job title -->
+          <p class="text-cyber-pink text-sm sm:text-base tracking-wider mb-2 font-display">
+            &gt; ROLE: [YOUR_JOB_TITLE]
+          </p>
+          <!-- Guide: 2–3 sentence bio -->
+          <p class="text-gray-400 text-sm sm:text-base leading-relaxed guide-text">
+            [Write a short professional bio: what you build, your focus areas, and what you are looking for.]
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-4">
+          <a href="#archive" class="cyber-cut-sm font-display text-xs sm:text-sm uppercase tracking-widest px-6 py-3 bg-cyber-pink/20 text-cyber-pink border border-cyber-pink/60 hover:bg-cyber-pink/30 transition-colors">
+            <i class="ri-folder-open-line mr-2"></i>View Archive
+          </a>
+          <a href="#terminal" class="cyber-cut-sm font-display text-xs sm:text-sm uppercase tracking-widest px-6 py-3 bg-cyber-cyan/10 text-cyber-cyan border border-cyber-cyan/50 hover:bg-cyber-cyan/20 transition-colors">
+            <i class="ri-terminal-box-line mr-2"></i>Open Terminal
+          </a>
+        </div>
+
+        <!-- Guide: optional meta lines (location, years, etc.) -->
+        <div class="mt-12 flex flex-wrap gap-6 text-[10px] sm:text-xs text-gray-500 uppercase tracking-widest">
+          <span><i class="ri-map-pin-line text-cyber-cyan"></i> [City, Country]</span>
+          <span><i class="ri-code-s-slash-line text-cyber-pink"></i> [Years of experience or specialty]</span>
+          <span><i class="ri-briefcase-line text-cyber-yellow"></i> [Open to work / role type]</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHIVE / PROJECTS -->
+    <section id="archive" class="px-4 sm:px-6 py-20 border-t border-cyber-cyan/10">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex items-end justify-between flex-wrap gap-4 mb-10">
+          <div>
+            <p class="text-cyber-cyan text-xs tracking-[0.4em] mb-2">// DATA_ARCHIVE</p>
+            <h2 class="font-display text-2xl sm:text-4xl font-bold uppercase glow-pink text-cyber-pink">
+              Projects
+            </h2>
+          </div>
+          <span class="text-xs text-gray-500 tracking-widest">ENCRYPTED · READ-ONLY</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- PROJECT 01 — duplicate block for more projects -->
+          <article class="archive-card cyber-cut bg-[#0d0d1a]/90 p-6 group">
+            <!-- Optional thumbnail:
+            <img src="images/project-01.png" alt="[Project 01 title]" />
+            -->
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-cyber-cyan text-xs tracking-widest font-display">[PROJECT_01]</span>
+              <!-- Guide: link to live demo or repo -->
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Open project 01">
+                <i class="ri-external-link-line text-cyber-pink opacity-60 group-hover:opacity-100 transition-opacity"></i>
+              </a>
+            </div>
+            <h3 class="font-display text-lg text-white mb-2 group-hover:text-cyber-pink transition-colors">
+              [Project title]
+            </h3>
+            <p class="text-gray-500 text-sm mb-4 leading-relaxed guide-text">
+              [One or two sentences: problem, what you built, outcome or stack highlight.]
+            </p>
+            <div class="flex flex-wrap gap-2 text-[10px] uppercase tracking-wider">
+              <span class="px-2 py-1 border border-cyber-cyan/30 text-cyber-cyan">[Tech]</span>
+              <span class="px-2 py-1 border border-cyber-pink/30 text-cyber-pink">[Tech]</span>
+              <span class="px-2 py-1 border border-cyber-green/30 text-cyber-green">[Tech]</span>
+            </div>
+          </article>
+
+          <article class="archive-card cyber-cut bg-[#0d0d1a]/90 p-6 group">
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-cyber-cyan text-xs tracking-widest font-display">[PROJECT_02]</span>
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Open project 02">
+                <i class="ri-external-link-line text-cyber-pink opacity-60 group-hover:opacity-100 transition-opacity"></i>
+              </a>
+            </div>
+            <h3 class="font-display text-lg text-white mb-2 group-hover:text-cyber-pink transition-colors">
+              [Project title]
+            </h3>
+            <p class="text-gray-500 text-sm mb-4 leading-relaxed guide-text">
+              [One or two sentences: problem, what you built, outcome or stack highlight.]
+            </p>
+            <div class="flex flex-wrap gap-2 text-[10px] uppercase tracking-wider">
+              <span class="px-2 py-1 border border-cyber-cyan/30 text-cyber-cyan">[Tech]</span>
+              <span class="px-2 py-1 border border-cyber-yellow/30 text-cyber-yellow">[Tech]</span>
+              <span class="px-2 py-1 border border-cyber-pink/30 text-cyber-pink">[Tech]</span>
+            </div>
+          </article>
+
+          <article class="archive-card cyber-cut bg-[#0d0d1a]/90 p-6 group md:col-span-2 lg:col-span-1">
+            <div class="flex justify-between items-start mb-4">
+              <span class="text-cyber-cyan text-xs tracking-widest font-display">[PROJECT_03]</span>
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Open project 03">
+                <i class="ri-external-link-line text-cyber-pink opacity-60 group-hover:opacity-100 transition-opacity"></i>
+              </a>
+            </div>
+            <h3 class="font-display text-lg text-white mb-2 group-hover:text-cyber-pink transition-colors">
+              [Project title]
+            </h3>
+            <p class="text-gray-500 text-sm mb-4 leading-relaxed guide-text">
+              [One or two sentences: problem, what you built, outcome or stack highlight.]
+            </p>
+            <div class="flex flex-wrap gap-2 text-[10px] uppercase tracking-wider">
+              <span class="px-2 py-1 border border-cyber-green/30 text-cyber-green">[Tech]</span>
+              <span class="px-2 py-1 border border-cyber-cyan/30 text-cyber-cyan">[Tech]</span>
+              <span class="px-2 py-1 border border-cyber-pink/30 text-cyber-pink">[Tech]</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS / AUGMENTATIONS -->
+    <section id="augment" class="px-4 sm:px-6 py-20 border-t border-cyber-cyan/10">
+      <div class="max-w-6xl mx-auto">
+        <p class="text-cyber-green text-xs tracking-[0.4em] mb-2">// NEURAL_LOADOUT</p>
+        <h2 class="font-display text-2xl sm:text-4xl font-bold uppercase mb-8 glow-cyan text-cyber-cyan">
+          Skills
+        </h2>
+
+        <div class="cyber-cut neon-border-cyan bg-[#050508]/90 p-4 sm:p-6 font-mono text-sm">
+          <div class="flex items-center gap-2 text-cyber-green mb-4 pb-3 border-b border-cyber-cyan/20">
+            <i class="ri-terminal-line"></i>
+            <span>root@[your-handle]:~$</span>
+            <span class="text-gray-500">load_skills.sh --verbose</span>
+          </div>
+
+          <p id="augment-boot" class="text-gray-500 text-xs mb-6 terminal-cursor">Initializing skill matrix...</p>
+
+          <!-- Guide: duplicate .skill-row blocks; set data-width="0-100" on each row -->
+          <div class="space-y-5" id="skill-bars">
+
+            <div class="skill-row" data-width="90%">
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-cyber-cyan"><i class="ri-code-line mr-1"></i>[Skill name]</span>
+                <span class="text-cyber-pink skill-pct">0%</span>
+              </div>
+              <div class="h-2 bg-gray-900 border border-cyber-cyan/20">
+                <div class="bar-fill h-full bg-gradient-to-r from-cyber-cyan to-cyber-pink" style="--target-width: 90%"></div>
+              </div>
+            </div>
+
+            <div class="skill-row" data-width="85">
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-cyber-cyan"><i class="ri-layout-line mr-1"></i>[Skill name]</span>
+                <span class="text-cyber-pink skill-pct">0%</span>
+              </div>
+              <div class="h-2 bg-gray-900 border border-cyber-cyan/20">
+                <div class="bar-fill h-full bg-gradient-to-r from-cyber-pink to-cyber-yellow" style="--target-width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="skill-row" data-width="80">
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-cyber-cyan"><i class="ri-server-line mr-1"></i>[Skill name]</span>
+                <span class="text-cyber-pink skill-pct">0%</span>
+              </div>
+              <div class="h-2 bg-gray-900 border border-cyber-cyan/20">
+                <div class="bar-fill h-full bg-gradient-to-r from-cyber-green to-cyber-cyan" style="--target-width: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skill-row" data-width="75">
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-cyber-cyan"><i class="ri-database-2-line mr-1"></i>[Skill name]</span>
+                <span class="text-cyber-pink skill-pct">0%</span>
+              </div>
+              <div class="h-2 bg-gray-900 border border-cyber-cyan/20">
+                <div class="bar-fill h-full bg-gradient-to-r from-cyber-yellow to-cyber-pink" style="--target-width: 75%"></div>
+              </div>
+            </div>
+
+            <div class="skill-row" data-width="82">
+              <div class="flex justify-between text-xs mb-1">
+                <span class="text-cyber-cyan"><i class="ri-git-branch-line mr-1"></i>[Skill name]</span>
+                <span class="text-cyber-pink skill-pct">0%</span>
+              </div>
+              <div class="h-2 bg-gray-900 border border-cyber-cyan/20">
+                <div class="bar-fill h-full bg-gradient-to-r from-cyber-cyan to-cyber-green" style="--target-width: 82%"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="mt-6 text-xs text-cyber-yellow guide-text">
+            &gt; [Optional note about skills, certifications, or tools.]
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="terminal" class="px-4 sm:px-6 py-20 pb-28 border-t border-cyber-pink/20">
+      <div class="max-w-6xl mx-auto">
+        <p class="text-cyber-pink text-xs tracking-[0.4em] mb-2">// UPLINK_CHANNEL</p>
+        <h2 class="font-display text-2xl sm:text-4xl font-bold uppercase mb-8 glow-pink text-cyber-pink">
+          Contact
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="cyber-cut neon-border-pink bg-[#0d0d1a]/90 p-4 sm:p-6">
+            <div class="flex items-center gap-2 text-xs text-gray-500 mb-4 border-b border-cyber-pink/20 pb-3">
+              <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-cyber-yellow/80"></span>
+              <span class="w-3 h-3 rounded-full bg-cyber-green/80"></span>
+              <span class="ml-2 tracking-widest">secure_terminal.exe</span>
+            </div>
+
+            <div id="terminal-output" class="min-h-[180px] text-xs sm:text-sm space-y-1 text-gray-400 font-mono">
+              <p class="text-cyber-green">&gt; uplink init</p>
+              <p>&gt; Awaiting handshake...</p>
+              <p class="text-gray-600">&gt; Press CONNECT to copy email to clipboard.</p>
+            </div>
+
+            <div class="mt-4 flex flex-col sm:flex-row gap-3">
+              <button
+                id="connect-btn"
+                type="button"
+                class="cyber-cut-sm font-display text-xs uppercase tracking-widest px-5 py-3 bg-cyber-pink/25 text-cyber-pink border border-cyber-pink hover:bg-cyber-pink/40 transition-all flex items-center justify-center gap-2"
+              >
+                <i class="ri-link-m"></i> CONNECT
+              </button>
+              <span class="text-xs text-gray-500 self-center flex items-center gap-2">
+                <i class="ri-mail-line text-cyber-cyan"></i>
+                <!-- Filled from js/main.js SITE_CONFIG.email -->
+                <span id="email-display">your.email@example.com</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="flex flex-col justify-center gap-4 text-sm text-gray-400">
+            <p class="guide-text">
+              [Short line: how to reach you or what roles you are open to.]
+            </p>
+            <p>
+              <i class="ri-github-fill text-cyber-pink mr-2"></i>
+              GitHub:
+              <a href="#" target="_blank" rel="noopener noreferrer" class="text-cyber-cyan hover:underline">[github.com/your-username]</a>
+            </p>
+            <p>
+              <i class="ri-linkedin-box-fill text-cyber-cyan mr-2"></i>
+              LinkedIn:
+              <a href="#" target="_blank" rel="noopener noreferrer" class="text-cyber-pink hover:underline">[linkedin.com/in/your-profile]</a>
+            </p>
+            <p>
+              <i class="ri-global-line text-cyber-yellow mr-2"></i>
+              Website:
+              <a href="#" target="_blank" rel="noopener noreferrer" class="text-cyber-yellow hover:underline">[your-site.com]</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-cyber-cyan/10 py-6 px-4 text-center text-[10px] sm:text-xs text-gray-600 tracking-widest">
+    <!-- Guide: year + your name -->
+    <p class="font-display text-cyber-cyan/60">
+      © [YEAR] [YOUR_NAME] · ALL RIGHTS RESERVED
+    </p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
